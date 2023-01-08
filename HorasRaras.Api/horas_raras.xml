@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HorasRaras.Api</name>
+    </assembly>
+    <members>
+        <member name="M:HorasRaras.Api.Controllers.UsuarioController.PostAsync(HorasRaras.Domain.Contracts.UsuarioRequest)">
+            <summary>
+            Através dessa rota você será capaz de cadastrar u usuário
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
