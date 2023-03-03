@@ -9,20 +9,26 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
-using Serilog.Sinks.MSSqlServer;
 using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
 
-try 
+
+
+try
 {
     var builder = WebApplication.CreateBuilder(args);
+
+    builder.Configuration
+    .AddUserSecrets<Program>()
+    .AddEnvironmentVariables();
 
     var connectionString = builder.Configuration.GetConnectionString("horas_raras_04");
 
     builder.Services.AddHttpContextAccessor();
     // Add services to the container.
     builder.Services.AddControllers();
+    
 
     var emailConfig = builder.Configuration
             .GetSection("Smtp")
